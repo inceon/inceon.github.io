@@ -1,0 +1,40 @@
+body{
+    background-color: #bbb;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+#footer{
+	background: RGBA(30,30,30,0.7);
+	color: #bcbcbc;	
+	font: bold 16pt Verdana;
+	text-align: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	min-height: 30px;
+	width: 100%;
+}
+#body{
+	margin-top: 35px;
+}
+#info{
+	display: inline;
+	position: absolute;
+	padding: 5px;
+	min-height: 145px;
+	min-width: 500px;
+	width: auto;
+	border: solid 1px;
+}
+.menu{
+	padding: 5px;
+	margin: 6px 0 6px 0;
+	cursor: pointer;
+	background: #00B9B9;
+	border: dotted 1px;
+}
+.menu:hover{
+	background: #00D8D8;
+}
