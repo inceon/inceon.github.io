@@ -10,10 +10,35 @@
 	<style>
 		input[type=button]{
 			width: 500px;
+			margin-left: 1.1em;
 		}
-		textarea[name=code]{
+		textarea[name=code], #redactor{
 			width: 493px;
-			height: 150px;
+			height: 250px;
+			margin-left: 1.1em;
+			font-size: 1.05em;
+			resize: none;
+		}
+		#redactor{
+			display: inline-block;
+			background: white;
+			border:solid 1px;
+		}
+		#info{
+			display: inline;
+			position: absolute;
+			padding: 5px;
+			min-height: 245px;
+			min-width: 650px;
+			width: auto;
+			border: solid 1px;
+		}
+		#numbers{
+			font-size: 0.85em;
+			padding-top: 4px;
+			color: #666;
+			display: inline;
+			position: absolute;
 		}
 	</style>
 </head>
@@ -22,12 +47,12 @@
 	<div id="body">
 		Enter your code:<br>
 		<form>
-			<textarea name="code" >S(0)
-J(1,1,4)
-S(1)
+			<div id="numbers">1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15</div>
+			<textarea name="code" >J(1,2,5)
+S(0)
 S(2)
-S(3)
-Z(3)</textarea>
+J(0,0,1)</textarea>
+			<!--<div contenteditable="true" id="redactor" name="code"></div>-->
 			<div id="info">
 			</div><br>
 			<input type="button" value="Run">
