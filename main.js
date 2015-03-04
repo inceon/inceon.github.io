@@ -1,4 +1,15 @@
 $(function() {
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0]; 
+		if (d.getElementById(id)) return; 
+		js = d.createElement(s); 
+		js.id = id; 
+		js.src = "//vk.com/js/api/openapi.js"; 
+		fjs.parentNode.insertBefore(js, fjs); 
+	}(document, 'script', 'vk_openapi_js'));
+	(function() {window.VK && VK.Widgets && VK.Widgets.Post && VK.Widgets.Post("vk_post_1_45616", 1, 45616, 'ZMk4b98xpQZMJJRXVsL1ig', {width: 300}) || setTimeout(arguments.callee, 50);	}());
+	(function() {if (!window.VK || !VK.Widgets || !VK.Widgets.Post || !VK.Widgets.Post("vk_post_181740986_1569", 181740986, 1569, 'fxXrqV7Aly9b-EvwrlmI5OvGeX8g', {width: 300})) setTimeout(arguments.callee, 50);}());
+	(function() {    if (!window.VK || !VK.Widgets || !VK.Widgets.Post || !VK.Widgets.Post("vk_post_6814215_38298", 6814215, 38298, 'rx0xGGeVs6BKUm1ZH_emn3KZrBs3', {width: 300})) setTimeout(arguments.callee, 50);  }());
 	for(var i=0;i<32;i++){
 		$("#info").append('<textarea style="resize: none; border: black solid 1px; max-width: 1.2em; max-height: 1.2em; text-align: center; margin-right: 1px; font-size: 1.2em;">0</textarea>');
 		if(i==15) break; // $("#info").append('<br /><br />');
