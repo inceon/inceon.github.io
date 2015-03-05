@@ -10,10 +10,19 @@ $(function() {
 	(function() {window.VK && VK.Widgets && VK.Widgets.Post && VK.Widgets.Post("vk_post_1_45616", 1, 45616, 'ZMk4b98xpQZMJJRXVsL1ig', {width: 300}) || setTimeout(arguments.callee, 50);	}());
 	(function() {if (!window.VK || !VK.Widgets || !VK.Widgets.Post || !VK.Widgets.Post("vk_post_181740986_1569", 181740986, 1569, 'fxXrqV7Aly9b-EvwrlmI5OvGeX8g', {width: 300})) setTimeout(arguments.callee, 50);}());
 	(function() {    if (!window.VK || !VK.Widgets || !VK.Widgets.Post || !VK.Widgets.Post("vk_post_6814215_38298", 6814215, 38298, 'rx0xGGeVs6BKUm1ZH_emn3KZrBs3', {width: 300})) setTimeout(arguments.callee, 50);  }());
-	for(var i=0;i<32;i++){
-		$("#info").append('<textarea style="resize: none; border: black solid 1px; max-width: 1.2em; max-height: 1.2em; text-align: center; margin-right: 1px; font-size: 1.2em;">0</textarea>');
-		if(i==15) break; // $("#info").append('<br /><br />');
+	
+	var num_register = 16;
+	for(var i=1;i<=32;i++){
+		$("#info").append('<textarea style="resize: none; border: #888 solid 1px; max-width: 1.2em; max-height: 1.2em; text-align: center; margin-right: 1px; font-size: 1.2em;">0</textarea>');
+		if(i==num_register) break; // $("#info").append('<br /><br />');
 	}
+	$("#info").append('<br><input type="button" value="Zero all" id="zero-reg" style="cursor:pointer; border: #ccc 1px solid; border-top: #888 solid 1px; width: 100%; position:absolute; left: 0; bottom: 0; max-height: 1.2em; text-align:center; font-size: 1.2em; background: #ddd;" /><br>');
+
+	$("#zero-reg").on("click", function(){
+		for(var i=0;i<num_register;i++){
+			$("#info textarea:eq("+i+")").val('0');
+		}
+	});
 	$("input[value='Run']").on("click", function(){
 		var code = $(this).parent().find("textarea[name='code']").val();
 		//var code = $(this).parent().find("#redactor").html();
@@ -26,7 +35,7 @@ $(function() {
 			var err = [];
 			var s = code.match(/(\S+)/gmi);
 			var c = s.length;
-			var re = /(.)\((\d)\s?,?\s?(\d)?\s?,?\s?(\d)?\)/;
+			var re = /(.)\((\d+)\s?,?\s?(\d+)?\s?,?\s?(\d+)?\)/;
 			
 				//var m = code.match(/(\S+)/g);
 				//m[0] = m[0].match(/([z,Z,s,S,t,T,j,J])\((\d)\s?,?\s?(\d)?\s?,?\s?(\d)?\)/gmi);
@@ -57,7 +66,7 @@ $(function() {
 			console.log(err);
 			console.log(reg);
 			if(err.length==0){
-				for(var i=0;i<32;i++){
+				for(var i=0;i<num_register;i++){
 					$("#info textarea:eq("+i+")").val(reg[i].toString());
 				}
 			}else for(var i=0;i<err.length;i++) $("#info").append('Error in line '+err[i]+'<br>');

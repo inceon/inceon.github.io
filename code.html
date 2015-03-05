@@ -10,7 +10,10 @@
 	<meta name="Description" content="Machine with naturally digit registers. Inceon. Programming" />
 	<script type="text/javascript" src="main.js"></script>
 	<style>
-		input[type=button]{
+		body *{
+			color: #444;
+		}
+		input[type=button]#Run{
 			width: 500px;
 			margin-left: 1.1em;
 		}
@@ -30,10 +33,10 @@
 			display: inline;
 			position: absolute;
 			padding: 5px;
-			min-height: 245px;
+			min-height: 267px;
 			min-width: 650px;
 			width: auto;
-			border: solid 1px;
+			border: solid #888 1px;
 		}
 		#numbers{
 			font-size: 0.85em;
@@ -42,7 +45,31 @@
 			display: inline;
 			position: absolute;
 		}
+		.programm div{
+			display: none;
+			border: #888 dotted 1px;
+		}
+		.programm p{
+			padding: 2px 15px;
+			background: #ddd;
+			margin: 0;
+		}
+		.programm{
+			background: #eee;
+			cursor: pointer;
+			color: #222;
+			border: 1px solid #888;
+			padding: 3px;
+			margin: 3px 0 3px 0;
+		}
 	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("#body .programm p").on('click',function(){
+				$(this).next().toggle('normal');
+			});
+		});
+	</script>
 </head>
 <body>
 	<a href="index.html"><div id="footer">Machine with naturally digit registers</div></a>
@@ -57,8 +84,12 @@ J(0,0,1)</textarea>
 			<!--<div contenteditable="true" id="redactor" name="code"></div>-->
 			<div id="info">
 			</div><br>
-			<input type="button" value="Run">
+			<input id="Run" type="button" value="Run">
 		</form>
+		<br>
+		<div class="programm"><p>x*y</p><div><pre style="margin-left: 10px;">J(0,2,11)<br>J(1,2,11)<br>T(0,3)<br>S(4)<br>J(1,4,12)<br>Z(2)<br>J(2,3,4)<br>S(0)<br>S(2)<br>J(0,0,7)<br>Z(0)</pre></div></div>
+		<div class="programm"><p>x+y</p><div><pre style="margin-left: 10px;">J(1,2,5)<br>S(0)<br>S(2)<br>J(0,0,1)</pre></div></div>
+		<div class="programm"><p>x-y</p><div><pre style="margin-left: 10px;">J(0,1,8)<br>S(1)<br>S(2)<br>J(0,2,6)<br>J(0,0,1)<br>Z(0)<br>J(0,0,9)<br>T(2,0)</pre></div></div>
 	</div>
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript">
