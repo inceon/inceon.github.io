@@ -1,0 +1,19 @@
+sudo: required
+dist: dist
+language: node_js
+node_js:
+  - "7"
+install:
+  - yarn global add bower
+  - yarn
+  - bower install
+script: 
+  - ng build --prod
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN 
+  local_dir: dist
+  on:
+    branch: master
