@@ -12,8 +12,9 @@ script:
 
 deploy:
   provider: pages
+  target_branch: master
   skip_cleanup: true
   github_token: $GITHUB_TOKEN 
   local_dir: dist
   on:
-    branch: master
+    branch: develop
