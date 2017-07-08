@@ -1,4 +1,4 @@
 # MySite
 ## Stack
-    * Angular 4
-    * Scss
+ - Angular 4
+ - Scss
