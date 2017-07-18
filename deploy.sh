@@ -1,8 +1,11 @@
-#!/bin/sh
-# deploy.sh
-set -e
-
-sudo apt-get install -y lftp
-
-# deployment via ftp upload. Using FTPS for that
-lftp -c "set ftps:initial-prot ''; set ftp:ssl-force true; set ftp:ssl-protect-data true; open ftp://$FTP_USER:$FTP_PASS@$FTP_HOST:21; mirror -eRv dist ./public_html; quit;"
+#!/bin/bash
+abort() {
+    local message=$1
+    echo $message
+    exit -1
+}
+[ -z $FTP_PASS ] && abort "FTP_PASS is undefined"
+[ -z $FTP_USER ] && abort "FTP_USER is undefined"
+[ -z $FTP_HOST ] && abort "FTP_HOST is undefined"
+lftp -u $FTP_USER,$FTP_PASS $FTP_HOST \
+ -e 'mirror -c -e -R dist public_html ; exit'
