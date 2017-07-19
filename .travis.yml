@@ -3,6 +3,7 @@ dist: dist
 language: node_js
 node_js:
   - "7"
+cache: yarn
 install:
   # - yarn global add bower
   - yarn
