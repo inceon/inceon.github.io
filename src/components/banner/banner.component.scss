@@ -1,0 +1,38 @@
+section { 
+	position: relative;
+	.text {
+		padding: 13% 0;
+		// background-image: url('https://wallpaperfx.com/uploads/wallpapers/2016/03/09/18475/preview_minimal-mountains-tops.jpg');
+		// background-image: url('/assets/images/pineapple-1704341_1280_blur.jpg');
+		background-image: url('/assets/images/apple-971148_1280_blur.jpg');
+		background-size: cover;
+		background-position: bottom;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		text-align: center;
+		h1 {
+			font-size: 3em;
+			font-weight: 100;
+			color: #fff;
+			line-height: 1em;
+			margin: 0 0 0.5em 0;
+			padding: 0;
+		}
+		p {
+			font-size: 1.5em;
+			color: rgba(255, 255, 255, 0.75);
+			margin-bottom: 1.75em;
+		}
+	}
+	.avatar {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		img {
+			width: 180px;
+			background: white;
+			padding: 5px;
+			border-radius: 50%;
+		}
+	}
+}

@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+/*Reset default styles*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;
+}
+
+$breakpoints: (
+   small: 34rem,
+	large: 60rem,
+);
+
+// if selector is wider than the screensize we are calling
+@mixin bp($screen-size) {
+	// and if our map that we named $breakpoints includes values (we called them $screen-size)
+	@if map-has-key($breakpoints, $screen-size) {
+		// then write out a nested Media Query that will target that value as our min-width
+		@media (min-width: map-get($breakpoints, $screen-size)) {
+	  		// write CSS within this mixin that would apply to only this breakpoint or above
+				@content;
+		}
+	// if the screen-size we are requesting doesn't exist, then tell me when it is compiled
+	} @else {
+        // Debugging
+        @warn "'#{$screen-size}' has not been declared as a breakpoint.";
+    }
+}
+
+
+/*Start my styles*/
+
+body {
+	font-family: "Raleway", Arial, Helvetica, sans-serif;
+	font-size: 1.1rem;
+	line-height: 1.7em;
+	overflow-x: hidden;
+}

@@ -1,0 +1,50 @@
+section {
+	color: #4A525C;
+	background: #FFFFFF;
+	padding: 5em;
+	.title {
+		text-align: center;
+		text-transform: uppercase;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		font-size: 1.1em;
+		border-bottom: 1px solid lightgray;
+	}
+
+	blockquote {
+		text-align: center;
+	}
+
+	.blocks {
+		padding: 1.5em 0;
+		display: grid;
+		grid-gap: 1em;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-auto-rows: minmax(26vh, auto);
+		.project {
+			justify-self: center;
+			border: 1px solid #eee;
+			background-color: rgba(245,255,255,0.85);
+			padding: 0.5em;
+			border-radius: 5px;
+			p {
+				line-height: 1.5em;
+				text-indent: 1.5em;
+				text-align: justify;
+			}
+			.screen {
+			    position: relative;
+				height: 250px;
+				img {
+					width: 70%;
+					margin: 0;
+				    position: absolute;
+				    top: 50%;
+				    left: 50%;
+				    transform: translate(-50%, -50%);
+					border-radius: inherit;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+section {
+	color: #212C3A;
+	background: #8cc9f0;
+	padding: 7em 0;
+	background-image: url('/assets/images/earphones-791309_1280_blur.jpg');
+	background-size: cover;
+	background-position: bottom;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+
+	> .title {
+		text-align: center;
+		text-transform: uppercase;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		font-size: 1.1em;
+		border-bottom: 1px solid lightgray;
+	}
+
+	.blocks {
+		display: grid;
+		grid-row-gap: 15px;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 500px);
+		// @include bp(small) {
+		// 	grid-template-columns: repeat(3, 1fr);
+		// 	grid-template-rows: auto;
+		// }
+
+		.block {
+			min-width: 70%;
+			background-color: rgba(245,255,255,0.85);
+			border-radius: 10px;
+			padding: 1.3em;
+			justify-self: center;
+			li {
+				font-size: 0.9em;
+				list-style-type: circle;
+				margin-left: 23px;
+				line-height: 29px;
+				color: #464F5C;
+			}
+		}
+	}
+}

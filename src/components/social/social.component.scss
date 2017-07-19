@@ -1,0 +1,78 @@
+section {
+	color: #4A525C;
+	background: #C5DBE9;
+	padding: 6em 0;
+
+	> .title {
+		text-align: center;
+		text-transform: uppercase;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		font-size: 1.1em;
+		border-bottom: 1px solid lightgray;
+	}
+
+	ul {
+		text-align: center;
+		li {
+			display: inline-block;
+			width: 5em;
+			height: 5em;
+			margin: 1em;
+			border-radius: 50%;
+			border: 1px solid gray;
+			position: relative;
+			a {
+				margin: 0;
+				padding: 5px;
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+				color: gray;
+			}
+
+			&.github:hover {
+				border-color: black;
+				a {
+					color: black;
+				}
+			}
+			&.stackoverflow:hover {
+				border-color: #B29C8B;
+				a {
+					color: #F48024;
+				}
+			}
+			&.fb:hover {
+				border-color: #3b5998;
+				a {
+					color: #3b5998;
+				}
+			}
+			&.twitter:hover {
+				border-color: #1da1f2;
+				a {
+					color: #1da1f2;
+				}
+			}
+			&.vk:hover {
+				border-color: #507299;
+				a {
+					color: #507299;
+				}
+			}
+		}
+	}
+
+	.email {
+		padding: 1em;
+		text-align: center;
+		a {
+			color: #4A525C;
+			&:hover {
+				color: #3B2666;
+			}
+		}
+	}
+}

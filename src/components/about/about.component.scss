@@ -1,0 +1,18 @@
+section {
+	padding: 9em 5em;
+	color: #4A525C;
+	background: #FFFFFF;	
+	.title {
+		text-align: center;
+		text-transform: uppercase;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		font-size: 1.1em;
+		border-bottom: 1px solid lightgray;
+	}
+
+	p {
+		text-align: justify;
+		text-indent: 1.5em;
+	}
+}

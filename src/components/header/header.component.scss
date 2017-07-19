@@ -1,0 +1,18 @@
+header {
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	margin: 1em 1.5em;
+	text-align: center;
+	word-spacing: 2em;
+}
+header a {
+	color: #BEE1D8;
+	padding-bottom: 2px;
+	font-weight: 500;
+	border-bottom: 1px solid #1E84AE;
+}
+header a:hover {
+	color: #D4E1DE;
+	border-bottom: 1px solid #29B6F0;
+}
