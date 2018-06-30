@@ -1,4 +1,5 @@
 sudo: required
+install: false
 dist: ./
 language: node_js
 node_js:
