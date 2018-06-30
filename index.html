@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Inceon</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	
+	<header id="header">
+	  <nav id="nav">
+	    <a href="#about">About</a>
+	    <a href="#skills">Skills</a>
+	    <a href="#projects">Projects</a>
+	    <a href="#social">Social</a>
+	  </nav>
+	</header>
+
+	<section class="baner">
+	  <div class="baner__background">	
+		<img src="images/apple-971148_1280_blur.jpg" alt="baner__background">
+	  </div>
+	  <div class="baner__info">
+	    <h1 class="baner__name">Sergey Okhrymenko</h1>
+	    <p class="baner__text">I'm a creative Frontend developer</p>
+	  </div>	
+	  <div class="baner__avatar">
+	    <img src="images/avatar.jpg" alt="avatar">
+	  </div>
+	</section>
+
+	<section class="about">
+	  <div class="about__title">About me</div>
+	  <p class="about__text">I'm an allround web developer. I'm programmer with good knowledge of front-end techniques. I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one'.</p>
+	</section>
+
+	<section class="skills">
+	  <div class="skills__title">Knowledge, skills and abilities</div>
+	  <div class="skills__blocks">
+	    <div class="skills__block">
+	      <span class="skills__block__title">
+	        I know:
+	      </span>
+	      <ul>
+	        <li>HTML5</li>
+	        <li>CSS3 + Sass</li>
+	        <li>JavaScript + TypeScript</li>
+	        <li>AngularJS and Angular2</li>
+	        <li>Ionic + Cordova/PhoneGap</li>
+	        <li>Git</li>
+	        <li>Gulp</li>
+	      </ul>
+	    </div>
+	    <div class="skills__block">
+	      <span class="skills__block__title">
+	        My skills:
+	      </span>
+	      <ul>
+	        <li>JavaScript Frameworks</li>
+	        <li>Web applications</li>
+	        <li>Responsive Web Design</li>
+	        <li>Mobile Applications</li>
+	        <li>Continuous integration system</li>
+	        <li>Image editing skills</li>
+	      </ul>
+	    </div>
+	    <div class="skills__block">
+	      <span class="skills__block__title">
+	        My abilities:
+	      </span>
+	      <ul>
+	        <li>Fast learner</li>
+	        <li>Teamwork</li>
+	        <li>Clear code</li>
+	        <li>Optimizing web apps</li>
+	      </ul>
+	    </div>
+	  </div>
+	</section>
+
+	<section class="projects">
+	  <div class="projects__title">Projects</div>
+	  <blockquote class="projects__quote">“You can do anything you set your mind to.” - Benjamin Franklin</blockquote>
+	  <div class="projects__blocks">
+	    <div class="projects__blocks__project">
+	      <div class="projects__blocks__project__screen">
+	        <img src="images/improvewell.png" alt="project">
+	      </div>	
+	      <p class="projects__blocks__project__text">ImproveWell provides a user-friendly platform for both staff and management, streamlining the data collection and change management processes.</p>
+	    </div>
+	  </div>
+	</section>
+	
+	<section class="social">
+	  <div class="social__title">Social</div>
+	  <ul class="social__list">
+	    <li class="github">
+	      <a href="http://github.com/inceon"><i class="fa fa-3x fa-github" aria-hidden="true"></i></a>
+	    </li>
+	    <li class="stackoverflow">
+	      <a href="https://stackoverflow.com/users/4534694/inceon"><i class="fa fa-3x fa-stack-overflow" aria-hidden="true"></i></a>
+	    </li>
+	    <li class="fb">
+	      <a href="https://www.facebook.com/inceon"><i class="fa fa-3x fa-facebook" aria-hidden="true"></i></a>
+	    </li>
+	    <li class="twitter">
+	      <a href="https://twitter.com/inceon"><i class="fa fa-3x fa-twitter" aria-hidden="true"></i></a>
+	    </li>
+	    <li class="vk">
+	      <a href="https://vk.com/inceon"><i class="fa fa-3x fa-vk" aria-hidden="true"></i></a>
+	    </li>
+	  </ul>
+	  <div class="email">
+	    <a href="mailto:mr.inceon@gmail.com">mr.inceon&#64;gmail.com</a>
+	  </div>
+	</section>
+
+
+	<script id="vertexShader" type="x-shaider/x-vertex">
+		uniform float time;
+		uniform vec2 resolution;
+		uniform vec2 u_mouse;
+		void main() {
+			gl_Position = vec4(position, 1.0);
+		}
+	</script>
+	<script id="fragmentShader" type="x-shaider/x-fragment">
+		uniform float time;
+		uniform vec2 resolution;
+		uniform vec2 u_mouse;
+		uniform sampler2D texture;
+
+		void main() {
+
+			vec2 pos = gl_FragCoord.xy / resolution.xy;
+
+			pos.x = pos.x + (sin(pos.y*20. + time/50.)/100.) / 2.;
+			pos.y = pos.y + (sin(pos.x*10. + time/50.)/100.) / 2.;	
+
+			float dist = distance(gl_FragCoord.xy, u_mouse.xy);
+
+			float maxDist = 180.;
+			if(dist < maxDist) {
+				pos.x = pos.x + (cos(pos.y*12. + time/65.)/70.) * (1. - dist/maxDist);
+				pos.y = pos.y + (sin(pos.x*10. + time/50.)/40.) * (1. - dist/maxDist);
+			}
+
+			gl_FragColor = texture2D(texture, pos);
+
+			gl_FragColor.rgb -= .1;
+			if(dist < maxDist) {
+				gl_FragColor.rgb += .4 * (1. - dist/maxDist); 
+			}
+		}
+	</script>
+
+	<script src="libs/TweenMax.min.js"></script>
+	<script src="libs/three.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
