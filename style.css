@@ -231,6 +231,12 @@ header a:hover {
 	color: gray;
 }
 
+.social__list li.linkedin:hover {
+	border-color: #006097;
+}
+.social__list li.linkedin:hover a {
+	color: #006097;
+}
 .social__list li.github:hover {
 	border-color: black;
 }
@@ -259,12 +265,6 @@ header a:hover {
 	color: #1da1f2;
 }
 
-.social__list li.vk:hover {
-	border-color: #507299;
-}
-.social__list li.vk:hover a {
-	color: #507299;
-}
 
 
 .email {
@@ -276,4 +276,10 @@ header a:hover {
 }
 .email a:hover {
 	color: #3B2666;
+}
+
+.copyright {
+	display: block;
+	padding-top: 15px;
+	font-size: 0.85em;
 }
