@@ -3,11 +3,16 @@
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 body {
 	font-family: "Raleway", Arial, Helvetica, sans-serif;
 	font-size: 1.1rem;
 	line-height: 1.7em;
 	overflow-x: hidden;
+	width: 100%;
 }
 
 header {
@@ -29,12 +34,22 @@ header a {
 }
 header a:hover {
 	color: #D4E1DE;
-	border-bottom: 1px solid #29B6F0;
+	border-bottom: 2px solid #29B6F0;
+}
+
+._title {
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	font-size: 1.1em;
+	font-weight: 600;
+	border-bottom: 1px solid #8ec1d6;
 }
 
 /* BANER */
 
-section.baner { 
+#baner { 
 	position: relative;
 }
 .baner__background {
@@ -60,6 +75,7 @@ section.baner {
 	z-index: 15;
 }
 .baner__name {
+	position: relative;
 	font-size: 3em;
 	font-weight: 100;
 	color: #fff;
@@ -87,19 +103,11 @@ section.baner {
 
 /* ABOUT */
 
-section.about {
+#about {
 	z-index: 15;
 	padding: 9em 5em;
 	color: #4A525C;
 	background: #FFFFFF;	
-}
-.about__title {
-	text-align: center;
-	text-transform: uppercase;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
-	font-size: 1.1em;
-	border-bottom: 1px solid lightgray;
 }
 
 .about__text {
@@ -110,37 +118,36 @@ section.about {
 /* SKILLS */
 
 
-section.skills {
+#skills {
 	color: #212C3A;
 	background: #8cc9f0;
-	padding: 7em 0;
+	padding: 7em 5em;
 	background-image: url('images/earphones-791309_1280_blur.jpg');
 	background-size: cover;
 	background-position: bottom;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 }
-.skills__title {
-	text-align: center;
-	text-transform: uppercase;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
-	font-size: 1.1em;
-	border-bottom: 1px solid lightgray;
-}
 
 .skills__blocks {
 	display: grid;
-	grid-row-gap: 15px;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(3, 500px);
+	grid-gap: 15px 15px;
+	grid-template-columns: repeat(3, minmax(280px, auto));
+	grid-template-rows: 350px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .skills__blocks {
+		grid-template-columns: minmax(350px, auto);
+		grid-template-rows: repeat(3, 330px);
+	}
 }
 .skills__block {
 	min-width: 70%;
-	background-color: rgba(245,255,255,0.85);
+	border: 1px solid #8ec1d6;
+	background-color: rgba(245,255,255,0.9);
 	border-radius: 10px;
 	padding: 1.3em;
-	justify-self: center;
 }
 .skills__block li {
 	font-size: 0.9em;
@@ -152,18 +159,10 @@ section.skills {
 
 /* PROJECTS */
 
-section.projects {
+#projects {
 	color: #4A525C;
 	background: #FFFFFF;
 	padding: 5em;
-}
-.projects__title {
-	text-align: center;
-	text-transform: uppercase;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
-	font-size: 1.1em;
-	border-bottom: 1px solid lightgray;
 }
 
 .projects__quote {
@@ -179,9 +178,9 @@ section.projects {
 }
 .projects__blocks__project {
 	justify-self: center;
-	border: 1px solid #eee;
-	background-color: rgba(245,255,255,0.85);
-	padding: 0.5em;
+	border: 1px solid #8ec1d6;
+	background-color: rgba(245,255,255,0.9);
+	padding: 0.5em 1em 1em;
 	border-radius: 5px;
 }
 .projects__blocks__project__screen {
@@ -205,21 +204,11 @@ section.projects {
 
 /* SOCIAL */
 
-section.social {
+#social {
 	color: #4A525C;
 	background: #C5DBE9;
-	padding: 6em 0;
+	padding: 6em 5em;
 }
-
-.social__title {
-	text-align: center;
-	text-transform: uppercase;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
-	font-size: 1.1em;
-	border-bottom: 1px solid lightgray;
-}
-
 .social__list {
 	text-align: center;
 }

@@ -19,7 +19,7 @@
 	  </nav>
 	</header>
 
-	<section class="baner">
+	<section class="baner" id="baner">
 	  <div class="baner__background">	
 		<img src="images/apple-971148_1280_blur.jpg" alt="baner__background">
 	  </div>
@@ -32,13 +32,13 @@
 	  </div>
 	</section>
 
-	<section class="about">
-	  <div class="about__title">About me</div>
+	<section class="about" id="about">
+	  <div class="_title">About me</div>
 	  <p class="about__text">I'm an allround web developer. I'm programmer with good knowledge of front-end techniques. I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one'.</p>
 	</section>
 
-	<section class="skills">
-	  <div class="skills__title">Knowledge, skills and abilities</div>
+	<section class="skills" id="skills">
+	  <div class="_title">Knowledge, skills and abilities</div>
 	  <div class="skills__blocks">
 	    <div class="skills__block">
 	      <span class="skills__block__title">
@@ -48,8 +48,10 @@
 	        <li>HTML5</li>
 	        <li>CSS3 + Sass</li>
 	        <li>JavaScript + TypeScript</li>
-	        <li>AngularJS and Angular2</li>
+	        <li>AngularJS and Angular2+</li>
 	        <li>Ionic + Cordova/PhoneGap</li>
+	        <li>PixiJS</li>
+	        <li>Three.JS</li>
 	        <li>Git</li>
 	        <li>Gulp</li>
 	      </ul>
@@ -81,8 +83,8 @@
 	  </div>
 	</section>
 
-	<section class="projects">
-	  <div class="projects__title">Projects</div>
+	<section class="projects" id="projects">
+	  <div class="_title">Projects</div>
 	  <blockquote class="projects__quote">“You can do anything you set your mind to.” - Benjamin Franklin</blockquote>
 	  <div class="projects__blocks">
 	    <div class="projects__blocks__project">
@@ -94,8 +96,8 @@
 	  </div>
 	</section>
 	
-	<section class="social">
-	  <div class="social__title">Social</div>
+	<section class="social" id="social">
+	  <div class="_title">Social</div>
 	  <ul class="social__list">
 	    <li class="github">
 	      <a href="http://github.com/inceon"><i class="fa fa-3x fa-github" aria-hidden="true"></i></a>
@@ -152,7 +154,7 @@
 
 			gl_FragColor.rgb -= .1;
 			if(dist < maxDist) {
-				gl_FragColor.rgb += .4 * (1. - dist/maxDist); 
+				gl_FragColor.rgb += .17 * (1. - dist/maxDist); 
 			}
 		}
 	</script>

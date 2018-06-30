@@ -16,6 +16,7 @@ animate();
 
 
 function init() {
+  // Shader
   container = document.getElementsByClassName('baner__background')[0];
   camera = new THREE.Camera();
   camera.position.z = 1;
@@ -45,6 +46,23 @@ function init() {
     uniforms.u_mouse.value.x = e.pageX;
     uniforms.u_mouse.value.y = height - e.pageY;
   };
+
+  // Text animation
+
+  TweenMax.fromTo(document.getElementsByClassName('baner__name'), 2, {
+    opacity: 0,
+    top: -50
+  }, {
+    opacity: 1,
+    top: 0, 
+    delay: 0.5
+  });
+  TweenMax.fromTo(document.getElementsByClassName('baner__text'), 3, {
+    opacity: 0
+  }, {
+    opacity: 1,
+    delay: 0.5
+  });
 }
 
 function animate() {
