@@ -54,6 +54,8 @@ header a:hover {
 }
 .baner__background {
 	z-index: 1;
+	width: 100vw;
+	overflow: hidden;
 }
 .baner__background canvas {
 	position: absolute;
@@ -136,12 +138,6 @@ header a:hover {
 	grid-template-rows: 350px;
 }
 
-@media only screen and (max-width: 1000px) {
-    .skills__blocks {
-		grid-template-columns: minmax(350px, auto);
-		grid-template-rows: repeat(3, 330px);
-	}
-}
 .skills__block {
 	min-width: 70%;
 	border: 1px solid #8ec1d6;
@@ -282,4 +278,60 @@ header a:hover {
 	display: block;
 	padding-top: 15px;
 	font-size: 0.85em;
+}
+
+
+@media only screen and (max-width: 1000px) {
+	#about {
+		padding: 6.5em 4em 4em;
+	}
+	#skills {
+		padding: 4em;
+	}
+	#projects {
+		padding: 4em;
+	}
+	#social {
+		padding: 2em;
+	}
+
+    .skills__blocks {
+		grid-template-columns: minmax(340px, auto);
+		grid-template-rows: repeat(3, 330px);
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.baner__info {
+    	padding: 25% 0;
+    }
+	#about {
+		padding: 6.5em 1em 2em;
+	}
+	#skills {
+		padding: 1em;
+	}
+	#projects {
+		padding: 1em;
+	}
+	#social {
+		padding: 1em 0;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	header nav {
+    	margin: 1em;
+	    word-spacing: 1em;	
+    }
+	.skills__blocks {
+		grid-template-columns: minmax(240px, auto);
+		grid-template-rows: repeat(3, 330px);
+	}
+	.projects__blocks {
+		padding: 1.5em 0;
+		display: grid;
+		grid-gap: 1em;
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	}
 }
