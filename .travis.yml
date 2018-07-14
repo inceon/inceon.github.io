@@ -1,0 +1,24 @@
+sudo: required
+install: false
+dist: ./
+language: node_js
+node_js:
+  - "7"
+
+before_install:
+  - sudo apt-get install -y lftp
+
+deploy:
+  - provider: pages
+    target_branch: master
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN 
+    local_dir: ./
+    on:
+      branch: v2
+
+  - provider: script
+    script: sh ./deploy.sh
+    skip_cleanup: true
+    on:
+      branch: v2
